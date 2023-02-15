@@ -1,8 +1,15 @@
 const Genre = require("../models/genre");
 
 // Display list of all Genre.
-exports.genre_list = (req, res) => {
-  res.send("NOT IMPLEMENTED: Genre list");
+exports.genre_list = (req, res, next) => {
+  Genre.find({}, "")
+    .sort({name:1})
+    .exec(function(err, genres) {
+      if(err) {
+        return next(err);
+      }
+      res.render("genre_list", {genres: genres});
+    });
 };
 
 // Display detail page for a specific Genre.

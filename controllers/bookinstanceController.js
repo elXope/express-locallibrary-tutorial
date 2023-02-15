@@ -13,7 +13,7 @@ exports.bookinstance_list = (req, res, next) => {
         return next(err);
       }
       
-      res.render("book_instance_list.pug", {title: "Book Instances List", bookinstance_list: list_bookinstances});
+      res.render("book_instance_list", {title: "Book Instances List", bookinstance_list: list_bookinstances});
     });
 
 };

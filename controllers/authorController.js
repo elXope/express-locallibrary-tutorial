@@ -9,7 +9,7 @@ exports.author_list = (req, res, next) => {
         return next(err);
       }
 
-      res.render('../views/author_list.pug', {authors : authors});
+      res.render('author_list', {authors : authors});
     });
 };
 
