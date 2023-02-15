@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Author List
+
+  ul 
+    each author in authors 
+        li 
+            a(href=author.url) #{author.name}
+            span (#{author.date_of_birth_formatted} - #{author.date_of_death_formatted})
+
+    else 
+        p.text-warning There are no authors yet
